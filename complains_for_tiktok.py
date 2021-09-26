@@ -1,5 +1,6 @@
 import pyautogui as pag
 import time as t
+
 pag.FAILSAFE = False
 print(pag.position())
 print(pag.size())
@@ -11,8 +12,10 @@ v_len3 = int(input('количество видео 3 аккаунта '))
 v_len4 = int(input('количество видео 4 аккаунта '))
 v_len5 = int(input('количество видео 5 аккаунта '))
 a_end = int(input('Выключить компьютер после работы? 1-да 2-нет'))
-v_complaint = map(int,input('Введите какие жалобы использовать:'
-'1) Жестокость 2) Пропаганда 3)Безопастность 4)Оскорбление 5) Порнография и нагота').split())
+v_complaint = map(int, input('Введите какие жалобы использовать:'
+                             '1) Жестокость 2) Пропаганда 3)Безопастность 4)Оскорбление 5) Порнография и нагота').split())
+
+
 def cruelty():
     pag.moveTo(993, 224)  # жалоба
     pag.click()
@@ -21,6 +24,8 @@ def cruelty():
     pag.moveTo(1116, 962)  # отправить жалобу
     pag.click()
     t.sleep(l)
+
+
 def hatred():
     pag.moveTo(993, 224)  # жалоба
     pag.click()
@@ -29,6 +34,8 @@ def hatred():
     pag.moveTo(1116, 962)  # отправить жалобу
     pag.click()
     t.sleep(l)
+
+
 def minor():
     pag.moveTo(993, 224)  # жалоба
     pag.click()
@@ -43,6 +50,8 @@ def minor():
     pag.moveTo(1116, 852)  # отправить жб
     pag.click()
     t.sleep(l)
+
+
 def insult():
     pag.moveTo(993, 224)  # жалоба
     pag.click()
@@ -55,6 +64,8 @@ def insult():
     pag.moveTo(1113, 840)  # отправить жб
     pag.click()
     t.sleep(l)
+
+
 def nudity():
     pag.moveTo(993, 224)  # жалоба
     pag.click()
@@ -62,11 +73,14 @@ def nudity():
     pag.click()
     pag.moveTo(1120, 956)  # отправить жалобу
     pag.click()
+
+
 def complains_all():
     def compain():
         pag.moveTo(983, 859)  # видео
         pag.click()
-    if v_complaint ==1:
+
+    if v_complaint == 1:
         cruelty()
     elif v_complaint == 2:
         hatred()
@@ -78,6 +92,8 @@ def complains_all():
         nudity()
     pag.moveTo(1041, 665)  # листать вниз
     pag.click()
+
+
 for x in range(v_len1):
     pag.moveTo(1753, 17)  # свернуть
     pag.click()
@@ -85,20 +101,22 @@ for x in range(v_len1):
     pag.click()
     t.sleep(5)
     complains_all()
-if v_len2 ==0:
+if v_len2 == 0:
     raise ValueError("Скрипт завершен")
-elif v_len2 >0:
+elif v_len2 > 0:
     def next_link():
         pag.moveTo(1753, 17)  # свернуть
         pag.click()
         pag.moveTo(997, 812)  # 2ссылка
         pag.click()
         t.sleep(5)
+
+
     for x in range(v_len2):
         complains_all()
-if v_len3 ==0:
+if v_len3 == 0:
     raise ValueError("Скрипт завершен")
-elif v_len3 >0:
+elif v_len3 > 0:
     pag.moveTo(1753, 17)  # свернуть
     pag.click()
     pag.moveTo(1017, 869)  # 3ссылка
@@ -106,9 +124,9 @@ elif v_len3 >0:
     t.sleep(5)
     for x in range(v_len3):
         complains_all()
-if v_len4 ==0:
+if v_len4 == 0:
     raise ValueError("Скрипт завершен")
-elif v_len4 >0:
+elif v_len4 > 0:
     pag.moveTo(1753, 17)  # свернуть
     pag.click()
     pag.moveTo(996, 919)  # 4ссылка
@@ -116,9 +134,9 @@ elif v_len4 >0:
     t.sleep(5)
     for x in range(v_len4):
         complains_all()
-if v_len5 ==0:
+if v_len5 == 0:
     raise ValueError("Скрипт завершен")
-elif v_len5 >0:
+elif v_len5 > 0:
     pag.moveTo(1753, 17)  # свернуть
     pag.click()
     pag.moveTo(992, 971)  # 5ссылка
@@ -126,7 +144,7 @@ elif v_len5 >0:
     t.sleep(5)
     for x in range(v_len5):
         complains_all()
-if a_end ==1:
+if a_end == 1:
     pag.moveTo(0, 1079)  # выключение
     pag.click()
     pag.moveTo(28, 980)  # кнопка
